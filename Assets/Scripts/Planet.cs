@@ -16,14 +16,23 @@ public class Planet : MonoBehaviour
     [HideInInspector]
     public string planetName;
 
+    GameObject sun;
     List<GameObject> moonGameObjects;
-    Canvas tooltip; //TODO: Implement
+    GameObject tooltip; //TODO: Implement
 
     // Start is called before the first frame update
     [System.Obsolete]
     void Start()
     {
+        tooltip = new GameObject();
+        tooltip.name = name+"-Canvas";
+        tooltip.AddComponent<Canvas>();
+        tooltip.transform.SetParent(transform);
+        tooltip.GetComponent<Canvas>().
+
         moonGameObjects = new List<GameObject>();
+        sun = GameObject.FindGameObjectWithTag("Sun");
+            
         planetName = name;
 
         for (int i = 0; i < moons; i ++)
@@ -40,6 +49,7 @@ public class Planet : MonoBehaviour
     void Update()
     {
         transform.Rotate(Vector3.down, rotationMPH / 120 * Time.deltaTime);
+        transform.RotateAround(sun.transform.position, Vector3.down, orbitVelocity * Time.deltaTime);
 
         if (atmosphere)
         {
