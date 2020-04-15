@@ -27,8 +27,8 @@ public class Planet : MonoBehaviour
         tooltip = new GameObject();
         tooltip.name = name+"-Canvas";
         tooltip.AddComponent<Canvas>();
+        tooltip.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
         tooltip.transform.SetParent(transform);
-        tooltip.GetComponent<Canvas>().
 
         moonGameObjects = new List<GameObject>();
         sun = GameObject.FindGameObjectWithTag("Sun");
