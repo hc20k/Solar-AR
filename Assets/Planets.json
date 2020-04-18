@@ -1,0 +1,116 @@
+{
+    "planets": [
+        {
+            "name": "mercury",
+            "description": "Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 days, the shortest of all the planets in the Solar System. It is named after the Roman deity Mercury, the messenger of the gods.",
+            "fun_facts": [
+                "Mercury does not have any moons or rings.",
+                "Mercury is the smallest planet.",
+                "Mercury is the closest planet to the Sun.",
+                "Your weight on Mercury would be 38% of your weight on Earth.",
+                "A day on the surface of Mercury lasts 176 Earth days.",
+                "A year on Mercury takes 88 Earth days.",
+                "It’s not known who discovered Mercury."
+            ]
+        },
+        {
+            "name": "venus",
+            "description": "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the second-brightest natural object in the night sky after the Moon, Venus can cast shadows and, rarely, is visible to the naked eye in broad daylight.",
+            "fun_facts": [
+                "Venus is the second brightest natural object in the sky. The planet has an apparent magnitude of -3.8 to -4.6, which makes it visible on a bright, clear day. The Moon is the only other natural object that is brighter.",
+                "Venus is sometimes referred to as the \"morning star\" and \"evening star\". When the orbit of Venus overtakes Earth’s orbit, it changes from being visible at sunrise to being visible at sunset.",
+                "One day on Venus is longer than one year on Earth. Due to the slow rotation on its axis, it takes 243 Earth-days to complete one rotation. The orbit of the planet takes 225 Earth-days – making a year on Venus shorter on day on Venus.",
+                "Venus is sometimes called Earth’s sister planet. This is because their size is very similar (there is only a 638 km different in diameter) and Venus has around 81% of Earth’s mass.",
+                "Venus is the hottest planet in the solar system with an average surface temperature of 462°C (863°F). Also, Venus doesn’t tilt on its axis which means there are no seasons either.",
+                "Venus is the closest planet to Earth. When Venus is in line with Earth and the Sun, it is the closest planet to us, at an average distance of 41 million kilometers (25.5 million miles) away."
+            ]
+        },
+        {
+            "name": "earth",
+            "description": "Earth, our home, is the third planet from the sun. It's the only planet known to have an atmosphere containing free oxygen, oceans of water on its surface and, of course, life. Earth is the fifth largest of the planets in the solar system.",
+            "fun_facts": [
+                "The Earth’s rotation is gradually slowing. This deceleration is happening almost imperceptibly, at approximately 17 milliseconds per hundred years, although the rate at which it occurs is not perfectly uniform.",
+                "Earth has a powerful magnetic field. This phenomenon is caused by the nickel-iron core of the planet, coupled with its rapid rotation. This field protects the Earth from the effects of solar wind.",
+                "There is only one natural satellite of the planet Earth. As a percentage of the size of the body it orbits, the Moon is the largest satellite of any planet in our solar system. ",
+                "The Earth is the densest planet in the Solar System. This varies according to the part of the planet; for example, the metallic core is denser than the crust. The average density of the Earth is approximately 5.52 grams per cubic centimetre.",
+                "The Earth was once believed to be the centre of the universe. Due to the apparent movements of the Sun and planets in relation to their viewpoint, ancient scientists insisted that the Earth remained static, whilst other celestial bodies travelled in circular orbits around it."
+            ]
+        },
+        {
+            "name": "mars",
+            "description": "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries the name of the Roman god of war, and is often referred to as the 'Red Planet'.",
+            "fun_facts": [
+                "Mars and Earth have approximately the same landmass. Even though Mars has only 15% of the Earth’s volume and just over 10% of the Earth’s mass, around two thirds of the Earth’s surface is covered in water. Martian surface gravity is only 37% of the Earth’s (meaning you could leap nearly three times higher on Mars).",
+                "Mars is home to the tallest mountain in the solar system. Olympus Mons, a shield volcano, is 21km high and 600km in diameter. Despite having formed over billions of years, evidence from volcanic lava flows is so recent many scientists believe it could still be active.",
+                "Mars has the largest dust storms in the solar system. They can last for months and cover the entire planet. The seasons are extreme because its elliptical (oval-shaped) orbital path around the Sun is more elongated than most other planets in the solar system.",
+                "Pieces of Mars have fallen to Earth. Scientists have found tiny traces of Martian atmosphere within meteorites violently ejected from Mars, then orbiting the solar system amongst galactic debris for millions of years, before crash landing on Earth.",
+                "There are signs of liquid water on Mars. For years Mars has been known to have water in the form of ice. The first signs of trickling water are dark stripes or stains on crater wall and cliffs seen in satellite images. Due to Mars’ atmosphere this water would have to be salty to prevent it from freezing or vaporising. ",
+                "One day Mars will have a ring. In the next 20-40 million years Mars’ largest moon Phobos will be torn apart by gravitational forces leading to the creation of a ring that could last up to 100 million years."
+            ]
+        },
+        {
+            "name": "jupiter",
+            "description": "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined.",
+            "fun_facts": [
+                "It’s no secret that Jupiter is the largest planet in the Solar System. But this description really doesn’t do it justice. For one, the mass of Jupiter is 318 times as massive as the Earth. In fact, Jupiter is 2.5 times more massive than all of the other planets in the Solar System combined.",
+                "Jupiter has the shortest day of the eight planets. The planet rotates very Jupiter rotates very quickly, turning on its axis once every 9 hours and 55 minutes. This rapid rotation is also what causes the flattening effect of the planet, which is why it has an oblate shape.",
+                "One orbit of the Sun takes Jupiter 11.86 Earth years. This means that when viewed from Earth, the planet appears to move very slowly in the sky. It takes months for Jupiter to move from one constellation to the next.",
+                "Jupiter has a faint ring system around it. Its ring is mostly comprised of dust particles from some of Jupiter’s moons during impacts from comets and asteroids. The ring system begins about 92,000 km above Jupiter’s clouds and reaches more than 225,000 km from the planet. The rings are somewhere between 2,000-12,500 km thick.",
+                "Jupiter has at least 67 moons in satellite around the planet. This includes the four large moons called the Galilean moons that were first discovered by Galileo Galilei in 1610."
+            ]
+        },
+        {
+            "name": "saturn",
+            "description": "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius of about nine times that of Earth. It only has one-eighth the average density of Earth; however, with its larger volume, Saturn is over 95 times more massive.",
+            "fun_facts": [
+                "Saturn can be seen with the naked eye. It is the fifth brightest object in the solar system and is also easily studied through binoculars or a small telescope.",
+                "Saturn was known to the ancients, including the Babylonians and Far Eastern observers. It is named for the Roman god Saturnus, and was known to the Greeks as Cronus.",
+                "Saturn is the flattest planet. Its polar diameter is 90% of its equatorial diameter, this is due to its low density and fast rotation. Saturn turns on its axis once every 10 hours and 34 minutes giving it the second-shortest day of any of the solar system’s planets.",
+                "Saturn orbits the Sun once every 29.4 Earth years. Its slow movement against the backdrop of stars earned it the nickname of “Lubadsagush” from the ancient Assyrians. The name means \"oldest of the old\".",
+                "Saturn's upper atmosphere is divided into bands of clouds. The top layers are mostly ammonia ice. Below them, the clouds are largely water ice. Below are layers of cold hydrogen and sulfur ice mixtures.",
+                "Saturn has oval-shaped storms similar to Jupiter’s. The region around its north pole has a hexagonal-shaped pattern of clouds. Scientists think this may be a wave pattern in the upper clouds. The planet also has a vortex over its south pole that resembles a hurricane-like storm."
+            ]
+        },
+        {
+            "name": "uranus",
+            "description": "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System. Uranus is similar in composition to Neptune, and both have bulk chemical compositions which differ from that of the larger gas giants Jupiter and Saturn.",
+            "fun_facts": [
+                "Uranus turns on its axis once every 17 hours, 14 minutes. The planet rotates in a retrograde direction, opposite to the way Earth and most other planets turn.",
+                "Uranus makes one trip around the Sun every 84 Earth years. During some parts of its orbit one or the other of its poles point directly at the Sun and get about 42 years of direct sunlight. The rest of the time they are in darkness.",
+                "Only one spacecraft has flown by Uranus. In 1986, the Voyager 2 spacecraft swept past the planet at a distance of 81,500 km. It returned the first close-up images of the planet, its moons, and rings.",
+                "Uranus hits the coldest temperatures of any planet. With minimum atmospheric temperature of -224°C Uranus is nearly coldest planet in the solar system. While Neptune doesn’t get as cold as Uranus it is on average colder. The upper atmosphere of Uranus is covered by a methane haze which hides the storms that take place in the cloud decks."
+            ]
+        },
+        {
+            "name": "neptune",
+            "description": "Neptune is the eighth and farthest known planet from the Sun in the Solar System. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. Neptune is 17 times the mass of Earth, slightly more massive than its near-twin Uranus.",
+            "fun_facts": [
+                "Neptune was not known to the ancients. It is not visible to the naked eye and was first observed in 1846. Its position was determined using mathematical predictions. It was named after the Roman god of the sea.",
+                "Neptune spins on its axis very rapidly. Its equatorial clouds take 16 hours to make one rotation. This is because Neptune is not solid body.",
+                "The atmosphere of Neptune is made of hydrogen and helium, with some methane. The methane absorbs red light, which makes the planet appear a lovely blue. High, thin clouds drift in the upper atmosphere.",
+                "Neptune has 14 moons. The most interesting moon is Triton, a frozen world that is spewing nitrogen ice and dust particles out from below its surface. It was likely captured by the gravitational pull of Neptune. It is probably the coldest world in the solar system.",
+                "Neptune has a very thin collection of rings. They are likely made up of ice particles mixed with dust grains and possibly coated with a carbon-based substance."
+            ]
+        },
+        {
+            "name": "pluto",
+            "description": "Pluto is an icy dwarf planet in the Kuiper belt, a ring of bodies beyond the orbit of Neptune. It was the first and the largest Kuiper belt object to be discovered. Pluto was discovered by Clyde Tombaugh in 1930 and declared to be the ninth planet from the Sun.",
+            "fun_facts": [
+                "Pluto is named after the Roman god of the underworld. This was proposed by Venetia Burney an eleven year old schoolgirl from Oxford, England.",
+                "Pluto was discovered on February 18th, 1930 by the Lowell Observatory. For the 76 years between Pluto being discovered and the time it was reclassified as a dwarf planet it completed under a third of its orbit around the Sun.",
+                "Pluto has a eccentric and inclined orbit. This takes it between 4.4 and 7.3 billion km from the Sun meaning Pluto is periodically closer to the Sun than Neptune.",
+                "Pluto's location was predicted by Percival Lowell in 1915. The prediction came from deviations he initially observed in 1905 in the orbits of Uranus and Neptune."
+            ]
+        },
+        {
+            "name": "sun",
+            "description": "The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth.",
+            "fun_facts": [
+                "The Sun accounts for 99.86% of the mass in the solar system. It has a mass of around 330,000 times that of Earth. It is three quarters hydrogen and most of its remaining mass is helium.",
+                "One day the Sun will consume the Earth. The Sun will continue to burn for about 130 million years after it burns through all of its hydrogen, instead burning helium. During this time it will expand to such a size that it will engulf Mercury, Venus, and Earth. When it reaches this point, it will have become a red giant star.",
+                "The Sun is almost a perfect sphere. Considering the sheer size of the Sun, there is only a 10 km difference in its polar and equatorial diameters – this makes it the closest thing to a perfect sphere observed in nature.",
+                "The Sun is travelling at 220 km per second. It is around 24,000-26,000 light-years from the galactic centre and it takes the Sun approximately 225-250 million years to complete one orbit of the centre of the Milky Way."
+            ]
+        }
+    ]
+}
