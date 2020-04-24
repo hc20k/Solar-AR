@@ -15,6 +15,7 @@ public class Planet : MonoBehaviour
 
     float moonDistanceRadius = 1.2f;
 
+
     [HideInInspector]
     public string planetName;
     Manager manager;
@@ -41,10 +42,26 @@ public class Planet : MonoBehaviour
 
             tooltip.GetComponent<Tooltip>().SetPlanetName(planetName);
             tooltip.GetComponent<CanvasGroup>().alpha = 0;
+
+            AnimationCurve widthCurve = new AnimationCurve();
+            widthCurve.AddKey(new Keyframe(0, 0.2f));
+            widthCurve.AddKey(new Keyframe(0.5f, 0));
+
+            GradientColorKey[] gckArray = { new GradientColorKey(Color.white, 1), new GradientColorKey(Color.white, 0) };
+
+            gameObject.AddComponent<TrailRenderer>();
+            gameObject.GetComponent<TrailRenderer>().widthCurve = widthCurve;
+            gameObject.GetComponent<TrailRenderer>().colorGradient.colorKeys = gckArray;
         }
 
         moonGameObjects = new List<GameObject>();
         sun = GameObject.FindGameObjectWithTag("Sun");
+
+        if (moons > 0)
+        {
+            // Debug moon space
+            Debug.DrawLine(-transform.localScale * moonDistanceRadius, transform.localScale * moonDistanceRadius, Color.red);
+        }
 
         for (int i = 0; i < moons; i ++)
         {
@@ -87,17 +104,21 @@ public class Planet : MonoBehaviour
         }
 
         // handle focus
-        if (manager.focusedPlanet == gameObject && tag == "Planet")
+        if (tag == "Planet")
         {
-            if (tooltip.GetComponent<CanvasGroup>().alpha <= 1)
+            if (manager.focusedPlanet == gameObject)
             {
-                tooltip.GetComponent<CanvasGroup>().alpha += transitionSpeed * Time.deltaTime;
+                if (tooltip.GetComponent<CanvasGroup>().alpha <= 1)
+                {
+                    tooltip.GetComponent<CanvasGroup>().alpha += (transitionSpeed/Time.timeScale) * Time.deltaTime;
+                }
             }
-        } else
-        {
-            if (tooltip.GetComponent<CanvasGroup>().alpha >= 0)
+            else
             {
-                tooltip.GetComponent<CanvasGroup>().alpha -= transitionSpeed * Time.deltaTime;
+                if (tooltip.GetComponent<CanvasGroup>().alpha >= 0)
+                {
+                    tooltip.GetComponent<CanvasGroup>().alpha -= (transitionSpeed / Time.timeScale) * Time.deltaTime;
+                }
             }
         }
     }

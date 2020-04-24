@@ -25,11 +25,13 @@ public class Tooltip : MonoBehaviour
     public GameObject descLabel;
     public GameObject funFactLabel;
 
-    string planetName;
+    public string planetName;
+    string randomFunFact;
+    PlanetInfo planetInfo;
 
     void Start()
     {
-        
+        planetInfo = null;
     }
 
     public void SetPlanetName(string input)
@@ -42,20 +44,19 @@ public class Tooltip : MonoBehaviour
     void LoadInfo()
     {
         PlanetJSON data = JsonUtility.FromJson<PlanetJSON>(GameObject.Find("Manager").GetComponent<Manager>().planetInfoJSON.text);
-        PlanetInfo pInfo = null;
 
         foreach (PlanetInfo _pInfo in data.planets)
         {
             if (_pInfo.name == planetName.ToLower())
             {
-                pInfo = _pInfo; break;
+                planetInfo = _pInfo; break;
             }
         }
 
-        if (pInfo != null)
+        if (planetInfo != null)
         {
-            descLabel.GetComponent<TextMeshProUGUI>().text = pInfo.description;
-            funFactLabel.GetComponent<TextMeshProUGUI>().text = pInfo.fun_facts[Random.Range(0, pInfo.fun_facts.Count)];
+            descLabel.GetComponent<TextMeshProUGUI>().text = planetInfo.description;
+            funFactLabel.GetComponent<TextMeshProUGUI>().text = randomFunFact;
         } else
         {
             Debug.LogError("Failed to load info for " + planetName);
@@ -65,6 +66,9 @@ public class Tooltip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (planetInfo != null)
+            randomFunFact = planetInfo.fun_facts[Random.Range(0, planetInfo.fun_facts.Count)];
+
         transform.rotation = Quaternion.LookRotation(transform.position - GameObject.FindGameObjectWithTag("MainCamera").transform.position);
     }
 }

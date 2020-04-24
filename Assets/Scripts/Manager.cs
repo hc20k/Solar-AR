@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
 
     void Start()
     {
+
     }
 
     public void Focus(GameObject planet)
@@ -36,6 +37,7 @@ public class Manager : MonoBehaviour
         isFocused = false;
         focusedPlanet = null;
     }
+
 
     // Update is called once per frame
     void Update()
