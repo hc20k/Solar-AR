@@ -73,6 +73,6 @@ public class Tooltip : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - GameObject.FindGameObjectWithTag("MainCamera").transform.position);
 
         float distanceFromCamera = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
-        transform.localScale = origPosition * (distanceFromCamera / 10);
+        //transform.localScale = origPosition * (distanceFromCamera / 10);
     }
 }

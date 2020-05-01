@@ -26,9 +26,10 @@ public class Manager : MonoBehaviour
 
     public void Focus(GameObject planet)
     {
-        print("Focused");
+        print("Focused: "+planet);
         isFocused = true;
         focusedPlanet = planet;
+        Handheld.Vibrate();
     }
 
     public void Unfocus()

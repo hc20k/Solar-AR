@@ -6,28 +6,15 @@ using UnityEngine.Rendering.PostProcessing;
 public class Settings : MonoBehaviour
 {
     // Start is called before the first frame update
-    Vector3 sOriginPos;
-    Quaternion sOriginRot;
-
-    Vector3 mcPos;
-    Quaternion mcRot;
 
     void Start()
     {
-        sOriginPos = GameObject.Find("AR Session Origin").transform.position;
-        sOriginRot = GameObject.Find("AR Session Origin").transform.rotation;
-
-        mcPos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
-        mcRot = GameObject.FindGameObjectWithTag("MainCamera").transform.rotation;
+        ToggleMoons(false);
     }
 
     public void Recalibrate()
     {
-        GameObject.Find("AR Session Origin").transform.position = sOriginPos;
-        GameObject.Find("AR Session Origin").transform.rotation = sOriginRot;
-
-        GameObject.FindGameObjectWithTag("MainCamera").transform.position = mcPos;
-        GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = mcRot;
+        GameObject.Find("SolarSystem").transform.position = GameObject.Find("AR Session Origin").transform.position;
     }
 
     public void SetMaxTS(float val)
@@ -38,10 +25,7 @@ public class Settings : MonoBehaviour
 
     public void SetSSScale(float val)
     {
-        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("Planet"))
-        {
-            GameObject.Find("AR Session Origin").transform.localScale = new Vector3(val, val, val);
-        }
+        GameObject.Find("SolarSystem").transform.localScale = new Vector3(val, val, val);
     }
 
     public void SetGraphics(bool val)
@@ -59,6 +43,11 @@ public class Settings : MonoBehaviour
                 moon.GetComponent<MeshRenderer>().enabled = !val;
             }
         }
+    }
+
+    public void ToggleSkybox(bool val)
+    {
+        GameObject.Find("AR Camera").GetComponent<UnityEngine.XR.ARFoundation.ARCameraBackground>().useCustomMaterial = val;
     }
 
     // Update is called once per frame
