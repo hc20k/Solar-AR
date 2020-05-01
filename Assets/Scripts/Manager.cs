@@ -49,5 +49,26 @@ public class Manager : MonoBehaviour
         {
             Time.timeScale -= timescaleTransitionModifier * Time.deltaTime;
         }
+
+        if (focusedPlanet)
+        {
+            foreach (GameObject inactivePlanet in GameObject.FindGameObjectsWithTag("Planet"))
+            {
+                if (inactivePlanet != focusedPlanet)
+                {
+                    Color color = inactivePlanet.GetComponent<Renderer>().material.color;
+                    color.a = 0.1f;
+                    inactivePlanet.GetComponent<Renderer>().material.color = color;
+                }
+            }
+        } else
+        {
+            foreach (GameObject inactivePlanet in GameObject.FindGameObjectsWithTag("Planet"))
+            {
+                Color color = inactivePlanet.GetComponent<Renderer>().material.color;
+                color.a = 1;
+                inactivePlanet.GetComponent<Renderer>().material.color = color;
+            }
+        }
     }
 }

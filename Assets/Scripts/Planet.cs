@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Planet : MonoBehaviour
 {
@@ -19,13 +20,12 @@ public class Planet : MonoBehaviour
     [HideInInspector]
     public string planetName;
     Manager manager;
-
     GameObject sun;
-    List<GameObject> moonGameObjects;
+    public List<GameObject> moonGameObjects;
 
     // ** tooltip vars **
     GameObject tooltip;
-    float transitionSpeed = 0.8f;
+    float transitionSpeed = 1.2f;
 
     // Start is called before the first frame update
     [System.Obsolete]
@@ -34,7 +34,7 @@ public class Planet : MonoBehaviour
         manager = GameObject.Find("Manager").GetComponent<Manager>();
         planetName = name;
 
-        if(tag == "Planet")
+        if(tag == "Planet" || tag == "Sun")
         {
             tooltip = Instantiate(manager.tooltipPrefab);
             tooltip.transform.position = transform.position + new Vector3(transform.localScale.x, 0, 0);
@@ -47,11 +47,14 @@ public class Planet : MonoBehaviour
             widthCurve.AddKey(new Keyframe(0, 0.2f));
             widthCurve.AddKey(new Keyframe(0.5f, 0));
 
-            GradientColorKey[] gckArray = { new GradientColorKey(Color.white, 1), new GradientColorKey(Color.white, 0) };
+            GradientColorKey[] gckArray = { new GradientColorKey(Color.white, 0.4f), new GradientColorKey(Color.white, 0) };
 
             gameObject.AddComponent<TrailRenderer>();
             gameObject.GetComponent<TrailRenderer>().widthCurve = widthCurve;
             gameObject.GetComponent<TrailRenderer>().colorGradient.colorKeys = gckArray;
+
+            Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
+            gameObject.GetComponent<TrailRenderer>().material = whiteDiffuseMat;
         }
 
         moonGameObjects = new List<GameObject>();
@@ -80,6 +83,7 @@ public class Planet : MonoBehaviour
     public void OnMouseDown()
     {
         Debug.Log("Tap: " + this);
+
         if (transform.parent)
         {
             manager.Focus(transform.parent.gameObject);
@@ -104,7 +108,7 @@ public class Planet : MonoBehaviour
         }
 
         // handle focus
-        if (tag == "Planet")
+        if (tag == "Planet" || tag == "Sun")
         {
             if (manager.focusedPlanet == gameObject)
             {

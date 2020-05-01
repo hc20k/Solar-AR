@@ -6,61 +6,50 @@ using UnityEngine.UI;
 public class PresentSettings : MonoBehaviour
 {
     public Canvas settingsCanvas;
-    bool settingsIsPresented = false;
+    bool settingsIsOpen = false;
 
     // Start is called before the first frame update
     void Start()
     {
         settingsCanvas.enabled = true;
         settingsCanvas.GetComponent<CanvasGroup>().alpha = 0;
-        GetComponent<Button>().onClick.AddListener(OpenSettings_);
     }
 
-    void OpenSettings_()
+    public void ToggleSettings()
     {
-        if (!settingsIsPresented)
+        if (settingsIsOpen == false)
         {
-            StartCoroutine("OpenSettings");
-            settingsIsPresented = true;
+            OpenSettings();
+            settingsIsOpen = true;
+        } else
+        {
+            CloseSettings();
+            settingsIsOpen = false;
         }
     }
 
-    public void CloseSettings_()
-    {
-        if (settingsIsPresented)
-        {
-            StartCoroutine("CloseSettings");
-            settingsIsPresented = false;
-        }
-    }
-
-    IEnumerator OpenSettings()
+    void OpenSettings()
     {
         print("Open settings");
-        //GameObject.Find("Manager").GetComponent<Manager>().Unfocus();
-        settingsCanvas.enabled = true;
-        settingsCanvas.GetComponent<CanvasGroup>().alpha = 0;
-
-        Time.timeScale = GameObject.Find("Manager").GetComponent<Manager>().maxTimescale;
-
-        while (Time.timeScale > 0.01f)
-        {
-            transform.parent.GetComponent<CanvasGroup>().alpha -= 10 * Time.deltaTime;
-            settingsCanvas.GetComponent<CanvasGroup>().alpha += 10 * Time.deltaTime;
-            yield return null;
-        }
-    }
-
-    IEnumerator CloseSettings()
-    {
-        print("Closing settings");
+        settingsCanvas.GetComponent<CanvasGroup>().interactable = true;
         settingsCanvas.GetComponent<CanvasGroup>().alpha = 1;
 
+        transform.parent.GetComponent<CanvasGroup>().interactable = false;
+        transform.parent.GetComponent<CanvasGroup>().alpha = 0;
+
         Time.timeScale = GameObject.Find("Manager").GetComponent<Manager>().maxTimescale;
+    }
+
+    void CloseSettings()
+    {
+        print("Closing settings");
+        Time.timeScale = GameObject.Find("Manager").GetComponent<Manager>().maxTimescale;
+
+        transform.parent.GetComponent<CanvasGroup>().interactable = true;
         transform.parent.GetComponent<CanvasGroup>().alpha = 1;
+
+        settingsCanvas.GetComponent<CanvasGroup>().interactable = false;
         settingsCanvas.GetComponent<CanvasGroup>().alpha = 0;
-        settingsCanvas.enabled = false;
-        yield return null;
     }
 
     // Update is called once per frame

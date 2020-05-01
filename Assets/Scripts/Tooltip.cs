@@ -29,8 +29,11 @@ public class Tooltip : MonoBehaviour
     string randomFunFact;
     PlanetInfo planetInfo;
 
+    Vector3 origPosition;
+
     void Start()
     {
+        origPosition = transform.localScale;
         planetInfo = null;
     }
 
@@ -55,6 +58,7 @@ public class Tooltip : MonoBehaviour
 
         if (planetInfo != null)
         {
+            randomFunFact = planetInfo.fun_facts[Random.Range(0, planetInfo.fun_facts.Count)];
             descLabel.GetComponent<TextMeshProUGUI>().text = planetInfo.description;
             funFactLabel.GetComponent<TextMeshProUGUI>().text = randomFunFact;
         } else
@@ -66,9 +70,9 @@ public class Tooltip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (planetInfo != null)
-            randomFunFact = planetInfo.fun_facts[Random.Range(0, planetInfo.fun_facts.Count)];
-
         transform.rotation = Quaternion.LookRotation(transform.position - GameObject.FindGameObjectWithTag("MainCamera").transform.position);
+
+        float distanceFromCamera = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
+        transform.localScale = origPosition * (distanceFromCamera / 10);
     }
 }

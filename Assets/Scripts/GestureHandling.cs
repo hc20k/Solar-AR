@@ -22,6 +22,9 @@ public class GestureHandling : MonoBehaviour
             {
                 GameObject.Find("Manager").GetComponent<Manager>().Unfocus();
             }
+        } else
+        {
+            GameObject.Find("Manager").GetComponent<Manager>().Unfocus();
         }
     }
 
@@ -41,6 +44,16 @@ public class GestureHandling : MonoBehaviour
             {
                 // Singular tap
                 HandleTap(touch);
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (!Physics.Raycast(ray, out hit, 100.0f))
+            {
+                GameObject.Find("Manager").GetComponent<Manager>().Unfocus();
             }
         }
     }
