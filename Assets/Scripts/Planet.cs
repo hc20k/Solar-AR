@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Planet : MonoBehaviour
 {
@@ -37,17 +38,11 @@ public class Planet : MonoBehaviour
 
         if(tag == "Planet" || tag == "Sun")
         {
-            label3DText = new GameObject
-            {
-                name = planetName + "-Lab"
-            };
-
-            label3DText.transform.position = transform.position + new Vector3(0, transform.localScale.x/8, 0);
-            label3DText.AddComponent<TextMesh>();
-            label3DText.GetComponent<TextMesh>().text = planetName;
-            label3DText.GetComponent<TextMesh>().fontSize = 30;
-            label3DText.transform.localScale = transform.localScale/30;
+            label3DText = Instantiate(manager.planetLabelPrefab);
+            label3DText.transform.position = transform.position + new Vector3(0, transform.localScale.x / 5, 0);
             label3DText.transform.SetParent(transform);
+            label3DText.GetComponentInChildren<TextMeshProUGUI>().text = planetName;
+            label3DText.name = planetName + "-Label";
 
             tooltip = Instantiate(manager.tooltipPrefab);
             tooltip.transform.position = transform.position + new Vector3(transform.localScale.x/5, transform.localScale.x / 5, transform.localScale.x / 5);

@@ -5355,6 +5355,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipPrefab: {fileID: 4216627866445032896, guid: 1d2075498138998449b40f95fd5946a1,
     type: 3}
+  planetLabelPrefab: {fileID: 7949415387980587413, guid: 5ffc6fb27af5045c6bfa216a7246c0b1,
+    type: 3}
   disableOrbit: 0
   planetInfoJSON: {fileID: 4900000, guid: 2da111770d9f4e547899a51a2e4b9336, type: 3}
   focusedPlanet: {fileID: 0}

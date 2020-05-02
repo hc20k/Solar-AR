@@ -7,6 +7,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject tooltipPrefab;
+    public GameObject planetLabelPrefab;
     public bool disableOrbit = true;
     public TextAsset planetInfoJSON;
 
